@@ -27,5 +27,15 @@ def mostrar_estudiantes(estudiantes):
     for e in estudiantes_ordenados:
         print(f"{e['nombre']:<15} {e['nota 1']:<8} {e['nota 2']:<8} {e['nota 3']:<8}")
         
-
-
+def calcular_promedio(estudiantes):
+    for estudiante in estudiantes:
+        try:
+            notas = [
+                float(estudiante['nota 1']),
+                float(estudiante['nota 2']),
+                float(estudiante['nota 3'])
+            ]
+            promedio = sum(notas) / len(notas)
+            print(f"{estudiante['nombre']}: Promedio = {promedio:.2f}")
+        except (ValueError, KeyError):
+            print(f"{estudiante['nombre']}: Error en las notas")
