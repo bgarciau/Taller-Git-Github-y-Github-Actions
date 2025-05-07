@@ -10,10 +10,12 @@ def validar_estudiantes(nombre_archivo):
                 notas = [float(fila['nota 1']), float(fila['nota 2']), float(fila['nota 3'])]
                 if all(0.0 <= nota <= 5.0 for nota in notas):
                     estudiantes_validos.append({
-                        'nombre': fila['Nombre']
+                        'nombre': fila['Nombre'],
+                        'nota 1': fila['nota 1'],
+                        'nota 2': fila['nota 2'],
+                        'nota 3': fila['nota 3'],
                     })
             except (ValueError, KeyError):
                 continue  
             
     return estudiantes_validos
-
