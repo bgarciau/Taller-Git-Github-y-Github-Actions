@@ -19,3 +19,13 @@ def validar_estudiantes(nombre_archivo):
                 continue  
             
     return estudiantes_validos
+
+def mostrar_estudiantes(estudiantes):
+    estudiantes_ordenados = sorted(estudiantes, key=lambda x: x['nombre'])
+    print(f"{'Nombre':<15} {'nota 1':<8} {'nota 2':<8} {'nota 3':<8}")
+    print("-" * 25)
+    for e in estudiantes_ordenados:
+        print(f"{e['nombre']:<15} {e['nota 1']:<8} {e['nota 2']:<8} {e['nota 3']:<8}")
+        
+
+
